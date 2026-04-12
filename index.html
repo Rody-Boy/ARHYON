@@ -207,7 +207,8 @@
     }
     .node{
       position:absolute;
-      min-width:150px;
+      width:calc(50% - 56px);
+      max-width:220px;
       padding:16px 16px;
       border-radius:18px;
       background:linear-gradient(180deg, rgba(20,30,52,.95), rgba(15,23,40,.85));
@@ -228,12 +229,12 @@
       background:linear-gradient(135deg, var(--accent), var(--accent-2));
       box-shadow:0 0 16px rgba(139,92,246,.55);
     }
-    .node.branding{top:44px; left:34px}
-    .node.website{top:66px; right:42px}
-    .node.content{left:68px; top:220px}
-    .node.ai{right:72px; top:230px}
-    .node.analytics{left:200px; bottom:52px}
-    .node.growth{right:165px; bottom:56px}
+    .node.branding{top:38px; left:24px}
+    .node.website{top:58px; right:24px}
+    .node.content{left:36px; top:212px}
+    .node.ai{right:36px; top:222px}
+    .node.analytics{left:74px; bottom:52px}
+    .node.growth{right:74px; bottom:56px}
 
     .pulse-line{
       position:absolute; inset:0;
@@ -682,13 +683,13 @@
       .framework{grid-template-columns:1fr}
       .phase-overview{grid-template-columns:1fr}
       .kpi-strip{grid-template-columns:1fr 1fr}
-      .node{min-width:130px; font-size:.94rem}
-      .node.branding{left:16px; top:22px}
-      .node.website{right:16px; top:40px}
-      .node.content{left:28px; top:195px}
-      .node.ai{right:28px; top:210px}
-      .node.analytics{left:40px; bottom:44px}
-      .node.growth{right:48px; bottom:44px}
+      .node{width:calc(50% - 30px); font-size:.92rem; padding:14px 12px}
+      .node.branding{left:14px; top:22px}
+      .node.website{right:14px; top:44px}
+      .node.content{left:20px; top:192px}
+      .node.ai{right:20px; top:202px}
+      .node.analytics{left:30px; bottom:42px}
+      .node.growth{right:30px; bottom:42px}
       .system-stage{min-height:460px}
     }
 
@@ -702,6 +703,14 @@
       .section-header{align-items:start}
       .flow-row{display:grid; grid-template-columns:1fr 1fr}
       .kpi-strip{grid-template-columns:1fr}
+      .node{width:calc(50% - 22px); font-size:.82rem}
+      .node.branding{left:10px; top:20px}
+      .node.website{right:10px; top:40px}
+      .node.content{left:14px; top:182px}
+      .node.ai{right:14px; top:198px}
+      .node.analytics{left:14px; bottom:38px}
+      .node.growth{right:14px; bottom:38px}
+      .node small{font-size:.78rem}
     }
   </style>
 </head>
