@@ -374,6 +374,77 @@
       color:#7d90bc; font-weight:700;
     }
 
+    .phase-overview{
+      margin-top:24px;
+      display:grid;
+      grid-template-columns:repeat(5, minmax(0, 1fr));
+      gap:14px;
+    }
+    .phase-card{
+      padding:20px 16px;
+      border-radius:20px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      text-align:left;
+      position:relative;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .phase-card::before{
+      content:"";
+      position:absolute;
+      inset:auto -18% -60% auto;
+      width:120px; height:120px; border-radius:50%;
+      background:radial-gradient(circle, rgba(56,189,248,.16), transparent 65%);
+      pointer-events:none;
+    }
+    .phase-no{
+      display:inline-flex;
+      width:34px; height:34px;
+      border-radius:10px;
+      align-items:center; justify-content:center;
+      margin-bottom:12px;
+      font-size:.84rem;
+      color:#e8f2ff;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.05);
+    }
+    .phase-card h3{
+      margin:0 0 8px;
+      font-size:1.05rem;
+      letter-spacing:-.01em;
+    }
+    .phase-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:.95rem;
+    }
+    .phase-flow{
+      margin-top:18px;
+      padding:18px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .phase-pill{
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      font-size:.85rem;
+      color:#e4eeff;
+    }
+    .phase-arrow{
+      color:#8ea3cd;
+      font-weight:700;
+      opacity:.85;
+    }
+
     .comparison{
       overflow:auto;
       border-radius:22px;
@@ -586,6 +657,7 @@
       .contact-wrap,
       .before-after{grid-template-columns:1fr}
       .framework{grid-template-columns:1fr 1fr}
+      .phase-overview{grid-template-columns:1fr 1fr}
       .step:not(:last-child)::after{display:none}
       .kpi-strip{grid-template-columns:1fr 1fr}
       .hero-visual{min-height:500px}
@@ -598,6 +670,7 @@
       .hero{padding-top:40px}
       .section{padding:72px 0}
       .framework{grid-template-columns:1fr}
+      .phase-overview{grid-template-columns:1fr}
       .kpi-strip{grid-template-columns:1fr 1fr}
       .node{min-width:130px; font-size:.94rem}
       .node.branding{left:16px; top:22px}
@@ -960,16 +1033,44 @@
     <div class="container reveal">
       <span class="eyebrow">Framework</span>
       <h2 class="h2">The RA Systems Method</h2>
-        <p class="lead">
-          One framework for every engagement: clear goals, focused execution, and scalable results.
-        </p>
+      <p class="lead">
+        We reduced the heavy copy and shifted to a visual phase view so clients can understand your process in seconds.
+      </p>
 
-      <div class="framework">
-        <div class="step"><strong>Discover</strong><small>Clarify goals, challenges, and context.</small></div>
-        <div class="step"><strong>Architect</strong><small>Map the process, flow, and solution structure.</small></div>
-        <div class="step"><strong>Build</strong><small>Execute design, code, assets, and automation.</small></div>
-        <div class="step"><strong>Deploy</strong><small>Launch smoothly with real-world usability in mind.</small></div>
-        <div class="step"><strong>Optimize</strong><small>Refine performance and improve over time.</small></div>
+      <div class="phase-overview" aria-label="Project phases">
+        <article class="phase-card">
+          <span class="phase-no">01</span>
+          <h3>Discover</h3>
+          <p>Goals, constraints, and success metrics are aligned.</p>
+        </article>
+        <article class="phase-card">
+          <span class="phase-no">02</span>
+          <h3>Architect</h3>
+          <p>Flowcharts, stack, and delivery map are defined.</p>
+        </article>
+        <article class="phase-card">
+          <span class="phase-no">03</span>
+          <h3>Build</h3>
+          <p>Designs, pages, and automations are produced in sprints.</p>
+        </article>
+        <article class="phase-card">
+          <span class="phase-no">04</span>
+          <h3>Deploy</h3>
+          <p>Go-live checklist, QA, and launch handoff are completed.</p>
+        </article>
+        <article class="phase-card">
+          <span class="phase-no">05</span>
+          <h3>Optimize</h3>
+          <p>Reports, insights, and improvements loop back into growth.</p>
+        </article>
+      </div>
+
+      <div class="phase-flow" aria-label="Flowchart summary">
+        <span class="phase-pill">Inputs: Goals + Current Stack</span>
+        <span class="phase-arrow">→</span>
+        <span class="phase-pill">Execution: Design + Build + Automation</span>
+        <span class="phase-arrow">→</span>
+        <span class="phase-pill">Outputs: Launch + Measurable Results</span>
       </div>
     </div>
   </section>
