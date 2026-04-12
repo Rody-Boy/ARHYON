@@ -507,6 +507,56 @@
       pointer-events:none;
     }
 
+    .solution-flow{
+      margin:10px 0 24px;
+      padding:20px;
+      border-radius:20px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .solution-flow svg{
+      width:100%;
+      height:180px;
+      display:block;
+    }
+
+    .ops-loop{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns:repeat(6, minmax(0, 1fr));
+      gap:12px;
+      align-items:stretch;
+    }
+    .ops-step{
+      padding:14px 12px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      text-align:center;
+      position:relative;
+    }
+    .ops-step svg{
+      width:22px;
+      height:22px;
+      margin:0 auto 8px;
+      display:block;
+      color:#d6e6ff;
+    }
+    .ops-step strong{
+      display:block;
+      font-size:.92rem;
+      margin-bottom:4px;
+      letter-spacing:-.01em;
+    }
+    .ops-step small{
+      color:var(--soft);
+      line-height:1.4;
+      font-size:.8rem;
+    }
+
     .comparison{
       overflow:auto;
       border-radius:22px;
@@ -721,6 +771,7 @@
       .framework{grid-template-columns:1fr 1fr}
       .phase-overview{grid-template-columns:1fr 1fr}
       .timeline-grid{grid-template-columns:1fr 1fr}
+      .ops-loop{grid-template-columns:repeat(3, minmax(0, 1fr))}
       .section-header{flex-direction:column; align-items:flex-start}
       .step:not(:last-child)::after{display:none}
       .kpi-strip{grid-template-columns:1fr 1fr}
@@ -736,7 +787,9 @@
       .framework{grid-template-columns:1fr}
       .phase-overview{grid-template-columns:1fr}
       .timeline-grid{grid-template-columns:1fr}
+      .ops-loop{grid-template-columns:repeat(2, minmax(0, 1fr))}
       .timeline-line{display:none}
+      .solution-flow svg{height:150px}
       .kpi-strip{grid-template-columns:1fr 1fr}
       .node{width:calc(50% - 30px); font-size:.92rem; padding:14px 12px}
       .node.branding{left:14px; top:22px}
@@ -760,6 +813,8 @@
       .kpi-strip{grid-template-columns:1fr}
       .hero-meta span{width:100%; text-align:center}
       .timeline-board{padding:18px}
+      .solution-flow{padding:14px}
+      .ops-loop{grid-template-columns:1fr}
       .phase-flow{padding:14px}
       .phase-pill{width:100%; text-align:center}
       .phase-arrow{display:none}
@@ -934,6 +989,37 @@
         </p>
       </div>
 
+      <div class="solution-flow" aria-label="Solutions workflow animation">
+        <svg viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="solutionStroke" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#8b5cf6" stop-opacity=".75"/>
+              <stop offset="100%" stop-color="#38bdf8" stop-opacity=".78"/>
+            </linearGradient>
+            <filter id="solutionGlow">
+              <feGaussianBlur stdDeviation="3" result="b"/>
+              <feMerge>
+                <feMergeNode in="b"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <path d="M70 110 C220 50, 370 170, 520 110 S820 50, 1130 110" fill="none" stroke="url(#solutionStroke)" stroke-width="3"/>
+          <circle cx="70" cy="110" r="5" fill="#a78bfa" filter="url(#solutionGlow)">
+            <animateMotion dur="5s" repeatCount="indefinite" path="M0 0 C150 -60, 300 60, 450 0 S750 -60, 1060 0" />
+          </circle>
+          <circle cx="70" cy="110" r="4.5" fill="#7dd3fc" filter="url(#solutionGlow)">
+            <animateMotion dur="4.2s" repeatCount="indefinite" path="M0 0 C150 -60, 300 60, 450 0 S750 -60, 1060 0" />
+          </circle>
+          <g fill="#dbeafe">
+            <circle cx="70" cy="110" r="6"/>
+            <circle cx="430" cy="116" r="6"/>
+            <circle cx="790" cy="104" r="6"/>
+            <circle cx="1130" cy="110" r="6"/>
+          </g>
+        </svg>
+      </div>
+
       <div class="grid-3">
         <article class="card">
           <div class="icon icon-content" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="4" width="14" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
@@ -1016,6 +1102,49 @@
 
   <section class="section" id="services">
     <div class="container reveal">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">Growth Loop</span>
+          <h2 class="h2">How Arhyon executes end-to-end.</h2>
+        </div>
+        <p class="lead">
+          A visual operating loop from attention to optimization so clients instantly understand how the system runs.
+        </p>
+      </div>
+
+      <div class="ops-loop" aria-label="Arhyon operating loop">
+        <article class="ops-step">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 12h18M15 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <strong>Attract</strong>
+          <small>Traffic and awareness entry points.</small>
+        </article>
+        <article class="ops-step">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 5h16v14H4zM8 9h8M8 13h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <strong>Understand</strong>
+          <small>Audit goals, gaps, and opportunities.</small>
+        </article>
+        <article class="ops-step">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 7h7v5H4zM13 12h7v5h-7zM11 9h2v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <strong>Plan</strong>
+          <small>Flowcharts and architecture mapping.</small>
+        </article>
+        <article class="ops-step">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 18l5-1 10-10-4-4L5 13l-1 5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          <strong>Build</strong>
+          <small>Design, development, and automation.</small>
+        </article>
+        <article class="ops-step">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <strong>Launch</strong>
+          <small>Go-live, tracking, and handoff.</small>
+        </article>
+        <article class="ops-step">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v6h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <strong>Optimize</strong>
+          <small>Insights loop into next improvements.</small>
+        </article>
+      </div>
+
       <div class="section-header">
         <div>
           <span class="eyebrow">Services & Process</span>
@@ -1507,7 +1636,11 @@
           </div>
         </div>
 
-        <form onsubmit="event.preventDefault(); document.getElementById('form-note').textContent='Thanks — your inquiry has been captured for this demo layout.';">
+        <form action="https://formsubmit.co/rhodarriola@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New Inquiry — Arhyon Website" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
           <div class="field">
             <label for="solution">What type of solution are you looking for?</label>
             <select id="solution" name="solution">
@@ -1563,7 +1696,7 @@
             </div>
           </div>
           <button class="btn btn-primary" type="submit" style="width:100%; margin-top:8px;">Submit Inquiry</button>
-          <p id="form-note" class="soft" style="margin:12px 2px 0;"></p>
+          <p class="soft" style="margin:12px 2px 0;">Inquiries will be sent to <strong>rhodarriola@gmail.com</strong>.</p>
         </form>
       </div>
     </div>
