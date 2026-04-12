@@ -236,18 +236,30 @@
       pointer-events:none;
     }
 
-    .trust-strip{
-      margin-top:28px;
-      display:grid; grid-template-columns:repeat(4, 1fr); gap:14px;
+    .kpi-strip{
+      margin-top:26px;
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0, 1fr));
+      gap:12px;
     }
-    .trust-item{
-      padding:16px 18px;
+    .kpi{
+      padding:16px;
       border-radius:18px;
-      background:rgba(255,255,255,.03);
       border:1px solid var(--line);
-      color:#dbe6ff;
+      background:rgba(255,255,255,.03);
       text-align:center;
-      font-size:.95rem;
+    }
+    .kpi strong{
+      display:block;
+      font-size:1.15rem;
+      letter-spacing:-.02em;
+      color:#eef5ff;
+    }
+    .kpi span{
+      display:block;
+      margin-top:4px;
+      color:var(--soft);
+      font-size:.86rem;
     }
 
     .grid-3{display:grid; grid-template-columns:repeat(3, 1fr); gap:18px}
@@ -326,6 +338,19 @@
       margin-top:14px; padding-top:14px;
       border-top:1px solid var(--line);
       color:#dce8ff;
+      font-weight:600;
+    }
+    .result-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:14px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(139,92,246,.32);
+      background:rgba(139,92,246,.13);
+      color:#ece3ff;
+      font-size:.84rem;
       font-weight:600;
     }
 
@@ -457,6 +482,19 @@
     }
     .quote h3{margin:0 0 12px}
     .quote p{margin:0; color:var(--muted); line-height:1.8}
+    .quote-proof{
+      margin-top:12px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(56,189,248,.35);
+      background:rgba(56,189,248,.12);
+      color:#dff5ff;
+      font-size:.84rem;
+      font-weight:600;
+    }
 
     .faq{display:grid; gap:14px}
     .faq-item{
@@ -549,7 +587,7 @@
       .before-after{grid-template-columns:1fr}
       .framework{grid-template-columns:1fr 1fr}
       .step:not(:last-child)::after{display:none}
-      .trust-strip{grid-template-columns:1fr 1fr}
+      .kpi-strip{grid-template-columns:1fr 1fr}
       .hero-visual{min-height:500px}
       .h1{max-width:14ch}
     }
@@ -560,7 +598,7 @@
       .hero{padding-top:40px}
       .section{padding:72px 0}
       .framework{grid-template-columns:1fr}
-      .trust-strip{grid-template-columns:1fr}
+      .kpi-strip{grid-template-columns:1fr 1fr}
       .node{min-width:130px; font-size:.94rem}
       .node.branding{left:16px; top:22px}
       .node.website{right:16px; top:40px}
@@ -580,6 +618,7 @@
       .card, .price-card, form, .ba-card, .quote{padding:20px}
       .section-header{align-items:start}
       .flow-row{display:grid; grid-template-columns:1fr 1fr}
+      .kpi-strip{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -621,11 +660,11 @@
           <a href="#solutions" class="btn">View Our Solutions</a>
         </div>
         <p class="soft" style="margin-top:18px;">Structured delivery. Measurable outcomes.</p>
-        <div class="trust-strip">
-          <div class="trust-item">System-Based Delivery</div>
-          <div class="trust-item">Creative + Technical Execution</div>
-          <div class="trust-item">Process-Driven Approach</div>
-          <div class="trust-item">Built for Scale</div>
+        <div class="kpi-strip">
+          <div class="kpi"><strong>End-to-End</strong><span>Creative + technical delivery</span></div>
+          <div class="kpi"><strong>1 Framework</strong><span>Discover → Architect → Build</span></div>
+          <div class="kpi"><strong>System-First</strong><span>Connected, not one-off tasks</span></div>
+          <div class="kpi"><strong>Scale Ready</strong><span>Built for iteration and growth</span></div>
         </div>
       </div>
 
@@ -742,6 +781,7 @@
             <li>Content planning and social media management</li>
             <li>Posting workflows and publishing support</li>
           </ul>
+          <span class="result-badge">Proof Focus: Faster publishing velocity</span>
           <div class="result">Result: Scalable, consistent content without the chaos.</div>
         </article>
 
@@ -754,6 +794,7 @@
             <li>UI/UX design and development</li>
             <li>Responsive optimization and launch</li>
           </ul>
+          <span class="result-badge">Proof Focus: Clearer conversion path</span>
           <div class="result">Result: A website that actively supports your business goals.</div>
         </article>
 
@@ -766,6 +807,7 @@
             <li>Automation setup and tool integration</li>
             <li>AI-assisted system design</li>
           </ul>
+          <span class="result-badge">Proof Focus: Less manual operations</span>
           <div class="result">Result: Less manual work, fewer bottlenecks, smarter operations.</div>
         </article>
 
@@ -1023,16 +1065,19 @@
         <article class="quote">
           <h3>AI Content Workflow System</h3>
           <p>Built a structured content pipeline combining ideation, AI-assisted captioning, design production, and publishing support.</p>
+          <span class="quote-proof">Content operations streamlined</span>
           <p style="margin-top:14px;"><strong>Outcome:</strong> Faster content creation and stronger brand consistency.</p>
         </article>
         <article class="quote">
           <h3>Conversion Landing Page</h3>
           <p>Designed and developed a modern landing page with stronger messaging hierarchy, cleaner visual structure, and clearer calls to action.</p>
+          <span class="quote-proof">Journey clarity improved</span>
           <p style="margin-top:14px;"><strong>Outcome:</strong> Improved credibility and better conversion readiness.</p>
         </article>
         <article class="quote">
           <h3>Workflow Automation System</h3>
           <p>Mapped and automated repetitive tasks using connected tools, logic flows, and system triggers to reduce manual bottlenecks.</p>
+          <span class="quote-proof">Execution bottlenecks reduced</span>
           <p style="margin-top:14px;"><strong>Outcome:</strong> Improved operational efficiency and more scalable execution.</p>
         </article>
       </div>
