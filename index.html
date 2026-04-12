@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RA AI Solutions — Smart Digital Systems for Modern Businesses</title>
-  <meta name="description" content="RA AI Solutions builds smart digital systems for modern businesses — from branding and websites to SaaS, AI workflows, content engines, and automation." />
+  <title>Arhyon — Smart Digital Systems for Modern Businesses</title>
+  <meta name="description" content="Arhyon builds smart digital systems for modern businesses — from branding and websites to SaaS, AI workflows, content engines, and automation." />
   <style>
     :root{
       --bg:#070b14;
@@ -118,7 +118,12 @@
       background:
         linear-gradient(135deg, rgba(139,92,246,.8), rgba(56,189,248,.85));
       box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 10px 30px rgba(55,108,255,.18);
-      font-weight:800;
+      padding:8px;
+    }
+    .logo svg{
+      width:100%;
+      height:100%;
+      display:block;
     }
     .nav-links{
       display:flex; gap:22px; align-items:center;
@@ -202,7 +207,8 @@
     }
     .node{
       position:absolute;
-      min-width:150px;
+      width:calc(50% - 56px);
+      max-width:220px;
       padding:16px 16px;
       border-radius:18px;
       background:linear-gradient(180deg, rgba(20,30,52,.95), rgba(15,23,40,.85));
@@ -223,12 +229,12 @@
       background:linear-gradient(135deg, var(--accent), var(--accent-2));
       box-shadow:0 0 16px rgba(139,92,246,.55);
     }
-    .node.branding{top:44px; left:34px}
-    .node.website{top:66px; right:42px}
-    .node.content{left:68px; top:220px}
-    .node.ai{right:72px; top:230px}
-    .node.analytics{left:200px; bottom:52px}
-    .node.growth{right:165px; bottom:56px}
+    .node.branding{top:38px; left:24px}
+    .node.website{top:58px; right:24px}
+    .node.content{left:36px; top:212px}
+    .node.ai{right:36px; top:222px}
+    .node.analytics{left:74px; bottom:52px}
+    .node.growth{right:74px; bottom:56px}
 
     .pulse-line{
       position:absolute; inset:0;
@@ -293,8 +299,22 @@
       background:rgba(255,255,255,.05);
       border:1px solid var(--line);
       margin-bottom:18px;
-      font-size:1.2rem;
+      color:#d8e7ff;
     }
+    .icon svg{
+      width:22px;
+      height:22px;
+      display:block;
+    }
+    .icon-creative{color:#d9c6ff}
+    .icon-platform{color:#bde8ff}
+    .icon-automation{color:#baf7df}
+    .icon-content{color:#c8d6ff}
+    .icon-website{color:#bde6ff}
+    .icon-workflow{color:#d8d1ff}
+    .icon-saas{color:#c5f0ff}
+    .icon-brand{color:#efdbff}
+    .icon-growth{color:#bbf7d0}
 
     .card h3{
       margin:0 0 10px;
@@ -372,6 +392,119 @@
       content:"→";
       position:absolute; right:-11px; top:50%; transform:translateY(-50%);
       color:#7d90bc; font-weight:700;
+    }
+
+    .phase-overview{
+      margin-top:24px;
+      display:grid;
+      grid-template-columns:repeat(5, minmax(0, 1fr));
+      gap:14px;
+    }
+    .phase-card{
+      padding:20px 16px;
+      border-radius:20px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      text-align:left;
+      position:relative;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .phase-card::before{
+      content:"";
+      position:absolute;
+      inset:auto -18% -60% auto;
+      width:120px; height:120px; border-radius:50%;
+      background:radial-gradient(circle, rgba(56,189,248,.16), transparent 65%);
+      pointer-events:none;
+    }
+    .phase-no{
+      display:inline-flex;
+      width:34px; height:34px;
+      border-radius:10px;
+      align-items:center; justify-content:center;
+      margin-bottom:12px;
+      font-size:.84rem;
+      color:#e8f2ff;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.05);
+    }
+    .phase-card h3{
+      margin:0 0 8px;
+      font-size:1.05rem;
+      letter-spacing:-.01em;
+    }
+    .phase-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:.95rem;
+    }
+    .phase-flow{
+      margin-top:18px;
+      padding:18px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .phase-pill{
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      font-size:.85rem;
+      color:#e4eeff;
+    }
+    .phase-arrow{
+      color:#8ea3cd;
+      font-weight:700;
+      opacity:.85;
+    }
+
+    .timeline-board{
+      margin-top:24px;
+      padding:24px;
+      border-radius:22px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .timeline-grid{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0, 1fr));
+      gap:14px;
+      position:relative;
+      z-index:2;
+    }
+    .timeline-step{
+      padding:16px 14px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.11);
+      background:rgba(255,255,255,.04);
+    }
+    .timeline-step strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:1rem;
+      letter-spacing:-.01em;
+    }
+    .timeline-step small{
+      color:var(--soft);
+      line-height:1.5;
+    }
+    .timeline-line{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      z-index:1;
+      pointer-events:none;
     }
 
     .comparison{
@@ -586,6 +719,9 @@
       .contact-wrap,
       .before-after{grid-template-columns:1fr}
       .framework{grid-template-columns:1fr 1fr}
+      .phase-overview{grid-template-columns:1fr 1fr}
+      .timeline-grid{grid-template-columns:1fr 1fr}
+      .section-header{flex-direction:column; align-items:flex-start}
       .step:not(:last-child)::after{display:none}
       .kpi-strip{grid-template-columns:1fr 1fr}
       .hero-visual{min-height:500px}
@@ -598,15 +734,18 @@
       .hero{padding-top:40px}
       .section{padding:72px 0}
       .framework{grid-template-columns:1fr}
+      .phase-overview{grid-template-columns:1fr}
+      .timeline-grid{grid-template-columns:1fr}
+      .timeline-line{display:none}
       .kpi-strip{grid-template-columns:1fr 1fr}
-      .node{min-width:130px; font-size:.94rem}
-      .node.branding{left:16px; top:22px}
-      .node.website{right:16px; top:40px}
-      .node.content{left:28px; top:195px}
-      .node.ai{right:28px; top:210px}
-      .node.analytics{left:40px; bottom:44px}
-      .node.growth{right:48px; bottom:44px}
-      .system-stage{min-height:460px}
+      .node{width:calc(50% - 30px); font-size:.92rem; padding:14px 12px}
+      .node.branding{left:14px; top:22px}
+      .node.website{right:14px; top:44px}
+      .node.content{left:20px; top:192px}
+      .node.ai{right:20px; top:202px}
+      .node.analytics{left:30px; bottom:42px}
+      .node.growth{right:30px; bottom:42px}
+      .system-stage{min-height:500px}
     }
 
     @media (max-width: 560px){
@@ -619,6 +758,20 @@
       .section-header{align-items:start}
       .flow-row{display:grid; grid-template-columns:1fr 1fr}
       .kpi-strip{grid-template-columns:1fr}
+      .hero-meta span{width:100%; text-align:center}
+      .timeline-board{padding:18px}
+      .phase-flow{padding:14px}
+      .phase-pill{width:100%; text-align:center}
+      .phase-arrow{display:none}
+      .node{width:calc(50% - 22px); font-size:.82rem}
+      .node.branding{left:10px; top:20px}
+      .node.website{right:10px; top:40px}
+      .node.content{left:14px; top:182px}
+      .node.ai{right:14px; top:198px}
+      .node.analytics{left:14px; bottom:38px}
+      .node.growth{right:14px; bottom:38px}
+      .node::after{display:none}
+      .node small{font-size:.78rem}
     }
   </style>
 </head>
@@ -626,8 +779,19 @@
   <nav class="nav">
     <div class="container nav-inner">
       <a href="#top" class="brand">
-        <span class="logo">RA</span>
-        <span>RA AI Solutions</span>
+        <span class="logo" aria-hidden="true">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arhyon logo">
+            <defs>
+              <linearGradient id="arhyonMark" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.98"/>
+                <stop offset="100%" stop-color="#dbeafe" stop-opacity="0.92"/>
+              </linearGradient>
+            </defs>
+            <path d="M10 54L25 10h7l15 44h-8l-3-9H21l-3 9h-8Zm13-16h11l-5.5-17L23 38Z" fill="url(#arhyonMark)"/>
+            <path d="M37 10h8v17h11V10h8v44h-8V34H45v20h-8V10Z" fill="url(#arhyonMark)"/>
+          </svg>
+        </span>
+        <span>Arhyon</span>
       </a>
       <div class="nav-links">
         <a href="#solutions">Solutions</a>
@@ -725,7 +889,7 @@
 
       <div class="grid-3">
         <article class="card">
-          <div class="icon">✦</div>
+          <div class="icon icon-creative" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 20l6-2 10-10-4-4L6 14l-2 6Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M13 7l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
           <h3>Creative Systems</h3>
           <p>Brand assets, pubmats, campaigns, and reusable design systems that create consistent visual presence.</p>
           <ul>
@@ -735,7 +899,7 @@
           </ul>
         </article>
         <article class="card">
-          <div class="icon">▣</div>
+          <div class="icon icon-platform" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 20h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
           <h3>Digital Platforms</h3>
           <p>Modern landing pages, websites, and SaaS interfaces designed for usability, trust, and conversion.</p>
           <ul>
@@ -745,7 +909,7 @@
           </ul>
         </article>
         <article class="card">
-          <div class="icon">◎</div>
+          <div class="icon icon-automation" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="16" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 11l2-2M11 13l2 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
           <h3>AI & Automation</h3>
           <p>Intelligent workflows that reduce manual work, connect systems, and make operations more scalable.</p>
           <ul>
@@ -772,7 +936,7 @@
 
       <div class="grid-3">
         <article class="card">
-          <div class="icon">✎</div>
+          <div class="icon icon-content" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="4" width="14" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
           <h3>AI Content Engine</h3>
           <p>A complete system to create, design, manage, and publish content with more consistency and less friction.</p>
           <ul>
@@ -786,7 +950,7 @@
         </article>
 
         <article class="card">
-          <div class="icon">⌘</div>
+          <div class="icon icon-website" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 9h18M8 5v4" stroke="currentColor" stroke-width="1.6"/></svg></div>
           <h3>Conversion Website System</h3>
           <p>Modern websites designed to communicate clearly, build trust, and turn visitors into inquiries.</p>
           <ul>
@@ -799,7 +963,7 @@
         </article>
 
         <article class="card">
-          <div class="icon">⇄</div>
+          <div class="icon icon-workflow" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 7h6v4H5zM13 13h6v4h-6z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 9h3v2M13 11v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
           <h3>Business Automation System</h3>
           <p>Smart workflows that streamline repetitive tasks and improve the way your operations run.</p>
           <ul>
@@ -812,7 +976,7 @@
         </article>
 
         <article class="card">
-          <div class="icon">▤</div>
+          <div class="icon icon-saas" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="5" width="16" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="12" r="1.4" fill="currentColor"/><circle cx="15" cy="12" r="1.4" fill="currentColor"/></svg></div>
           <h3>SaaS MVP Build</h3>
           <p>From idea to functional product, we help turn concepts into credible, usable digital platforms.</p>
           <ul>
@@ -824,7 +988,7 @@
         </article>
 
         <article class="card">
-          <div class="icon">◈</div>
+          <div class="icon icon-brand" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 18V6h6a4 4 0 1 1 0 8H6m6 0h2.5a3.5 3.5 0 1 1 0 7H6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
           <h3>Brand & Content System</h3>
           <p>A unified visual system for businesses that want stronger consistency across digital channels.</p>
           <ul>
@@ -836,7 +1000,7 @@
         </article>
 
         <article class="card">
-          <div class="icon">⟁</div>
+          <div class="icon icon-growth" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 16l5-5 3 3 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 8h4v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
           <h3>Growth Support Layer</h3>
           <p>An optional support layer for brands that need ongoing refinement, iteration, and managed execution.</p>
           <ul>
@@ -864,7 +1028,7 @@
 
       <div class="grid-2">
         <article class="card">
-          <div class="icon">📣</div>
+          <div class="icon icon-content" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="4" width="14" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
           <h3>Content & Growth Systems</h3>
           <p>Social media management, content planning, pubmats, caption systems, brand consistency, and publishing support.</p>
           <div class="process">
@@ -879,7 +1043,7 @@
         </article>
 
         <article class="card">
-          <div class="icon">🌐</div>
+          <div class="icon icon-website" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 9h18M8 5v4" stroke="currentColor" stroke-width="1.6"/></svg></div>
           <h3>Websites & Landing Pages</h3>
           <p>Business websites and landing pages designed for clarity, trust, and conversion.</p>
           <div class="process">
@@ -894,7 +1058,7 @@
         </article>
 
         <article class="card">
-          <div class="icon">🧩</div>
+          <div class="icon icon-saas" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="5" width="16" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="12" r="1.4" fill="currentColor"/><circle cx="15" cy="12" r="1.4" fill="currentColor"/></svg></div>
           <h3>SaaS & Web Apps</h3>
           <p>MVP planning, interfaces, dashboards, and lightweight platforms built around clear use cases.</p>
           <div class="process">
@@ -909,7 +1073,7 @@
         </article>
 
         <article class="card">
-          <div class="icon">🤖</div>
+          <div class="icon icon-automation" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="16" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 11l2-2M11 13l2 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
           <h3>AI & Automation Systems</h3>
           <p>Workflow automation, AI-assisted systems, and connected logic that make operations more efficient.</p>
           <div class="process">
@@ -924,7 +1088,7 @@
         </article>
 
         <article class="card">
-          <div class="icon">🎨</div>
+          <div class="icon icon-creative" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 20l6-2 10-10-4-4L6 14l-2 6Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M13 7l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
           <h3>Graphics, Pubmats & Creative Assets</h3>
           <p>Design assets that support campaigns, marketing, social content, and digital credibility.</p>
           <div class="process">
@@ -939,7 +1103,7 @@
         </article>
 
         <article class="card">
-          <div class="icon">⚙</div>
+          <div class="icon icon-workflow" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 7h6v4H5zM13 13h6v4h-6z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 9h3v2M13 11v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
           <h3>Integrated Delivery</h3>
           <p>For brands that need several layers at once: design, web, automation, and managed execution as one system.</p>
           <div class="process">
@@ -959,17 +1123,45 @@
   <section class="section" id="framework">
     <div class="container reveal">
       <span class="eyebrow">Framework</span>
-      <h2 class="h2">The RA Systems Method</h2>
-        <p class="lead">
-          One framework for every engagement: clear goals, focused execution, and scalable results.
-        </p>
+      <h2 class="h2">The Arhyon Systems Method</h2>
+      <p class="lead">
+        We reduced the heavy copy and shifted to a visual phase view so clients can understand your process in seconds.
+      </p>
 
-      <div class="framework">
-        <div class="step"><strong>Discover</strong><small>Clarify goals, challenges, and context.</small></div>
-        <div class="step"><strong>Architect</strong><small>Map the process, flow, and solution structure.</small></div>
-        <div class="step"><strong>Build</strong><small>Execute design, code, assets, and automation.</small></div>
-        <div class="step"><strong>Deploy</strong><small>Launch smoothly with real-world usability in mind.</small></div>
-        <div class="step"><strong>Optimize</strong><small>Refine performance and improve over time.</small></div>
+      <div class="phase-overview" aria-label="Project phases">
+        <article class="phase-card">
+          <span class="phase-no">01</span>
+          <h3>Discover</h3>
+          <p>Goals, constraints, and success metrics are aligned.</p>
+        </article>
+        <article class="phase-card">
+          <span class="phase-no">02</span>
+          <h3>Architect</h3>
+          <p>Flowcharts, stack, and delivery map are defined.</p>
+        </article>
+        <article class="phase-card">
+          <span class="phase-no">03</span>
+          <h3>Build</h3>
+          <p>Designs, pages, and automations are produced in sprints.</p>
+        </article>
+        <article class="phase-card">
+          <span class="phase-no">04</span>
+          <h3>Deploy</h3>
+          <p>Go-live checklist, QA, and launch handoff are completed.</p>
+        </article>
+        <article class="phase-card">
+          <span class="phase-no">05</span>
+          <h3>Optimize</h3>
+          <p>Reports, insights, and improvements loop back into growth.</p>
+        </article>
+      </div>
+
+      <div class="phase-flow" aria-label="Flowchart summary">
+        <span class="phase-pill">Inputs: Goals + Current Stack</span>
+        <span class="phase-arrow">→</span>
+        <span class="phase-pill">Execution: Design + Build + Automation</span>
+        <span class="phase-arrow">→</span>
+        <span class="phase-pill">Outputs: Launch + Measurable Results</span>
       </div>
     </div>
   </section>
@@ -1009,6 +1201,51 @@
           <circle r="6" fill="#38bdf8">
             <animateMotion dur="4s" repeatCount="indefinite" path="M80 160 C180 160, 200 160, 300 160 S420 160, 520 160 S640 160, 740 160 S860 160, 960 160 S1040 160, 1130 160" />
           </circle>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="container reveal">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">Visual Journey</span>
+          <h2 class="h2">Client delivery timeline at a glance.</h2>
+        </div>
+        <p class="lead">
+          This is another place to use the same visual style: show what happens each week with minimal text.
+        </p>
+      </div>
+
+      <div class="timeline-board" aria-label="Client delivery timeline">
+        <div class="timeline-grid">
+          <article class="timeline-step">
+            <strong>Week 1</strong>
+            <small>Kickoff, goals, and scope lock.</small>
+          </article>
+          <article class="timeline-step">
+            <strong>Week 2</strong>
+            <small>Flowchart, wireframes, and architecture.</small>
+          </article>
+          <article class="timeline-step">
+            <strong>Week 3</strong>
+            <small>Design + build sprint with review loop.</small>
+          </article>
+          <article class="timeline-step">
+            <strong>Week 4</strong>
+            <small>Launch, analytics setup, optimization plan.</small>
+          </article>
+        </div>
+
+        <svg class="timeline-line" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="timelineStroke" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#8b5cf6" stop-opacity=".45"/>
+              <stop offset="100%" stop-color="#38bdf8" stop-opacity=".45"/>
+            </linearGradient>
+          </defs>
+          <path d="M90 115 C220 115, 230 115, 360 115 S500 115, 630 115 S770 115, 900 115 S1020 115, 1110 115" fill="none" stroke="url(#timelineStroke)" stroke-width="3"/>
         </svg>
       </div>
     </div>
@@ -1102,7 +1339,7 @@
             <tr>
               <th>Feature</th>
               <th>Typical Freelancer</th>
-              <th>RA AI Solutions</th>
+              <th>Arhyon</th>
             </tr>
           </thead>
           <tbody>
@@ -1141,7 +1378,7 @@
     <div class="container reveal">
       <div class="section-header">
         <div>
-          <span class="eyebrow">Why RA</span>
+          <span class="eyebrow">Why Arhyon</span>
           <h2 class="h2">Built for teams that need clarity and momentum.</h2>
         </div>
         <p class="lead">
@@ -1151,17 +1388,17 @@
 
       <div class="grid-3">
         <article class="card">
-          <div class="icon">◌</div>
+          <div class="icon icon-workflow" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 7h6v4H5zM13 13h6v4h-6z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 9h3v2M13 11v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
           <h3>Systems Thinking</h3>
           <p>We connect brand, web, content, and automation into one operating flow.</p>
         </article>
         <article class="card">
-          <div class="icon">⬡</div>
+          <div class="icon icon-growth" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 16l5-5 3 3 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 8h4v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
           <h3>Built For Growth Teams</h3>
           <p>Best for growing businesses, startups, and service brands scaling digital execution.</p>
         </article>
         <article class="card">
-          <div class="icon">◇</div>
+          <div class="icon icon-platform" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 20h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
           <h3>Structured Delivery</h3>
           <p>Clear process, faster decisions, and outputs designed to keep improving over time.</p>
         </article>
@@ -1231,7 +1468,7 @@
       <div class="faq">
         <details class="faq-item">
           <summary>Do you only offer AI services?<span>+</span></summary>
-          <p>No. RA AI Solutions covers branding, graphics, pubmats, social media management, websites, SaaS MVPs, and automation. The real value is in how these areas work together as one system.</p>
+          <p>No. Arhyon covers branding, graphics, pubmats, social media management, websites, SaaS MVPs, and automation. The real value is in how these areas work together as one system.</p>
         </details>
         <details class="faq-item">
           <summary>Do you offer social media management?<span>+</span></summary>
@@ -1357,8 +1594,13 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div class="brand">
-        <span class="logo" style="width:36px; height:36px; border-radius:12px;">RA</span>
-        <span>RA AI Solutions</span>
+        <span class="logo" style="width:36px; height:36px; border-radius:12px;" aria-hidden="true">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arhyon logo">
+            <path d="M10 54L25 10h7l15 44h-8l-3-9H21l-3 9h-8Zm13-16h11l-5.5-17L23 38Z" fill="#f8fbff"/>
+            <path d="M37 10h8v17h11V10h8v44h-8V34H45v20h-8V10Z" fill="#f8fbff"/>
+          </svg>
+        </span>
+        <span>Arhyon</span>
       </div>
       <div>Smart Digital Systems for Modern Businesses</div>
     </div>
