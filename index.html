@@ -721,6 +721,7 @@
       .framework{grid-template-columns:1fr 1fr}
       .phase-overview{grid-template-columns:1fr 1fr}
       .timeline-grid{grid-template-columns:1fr 1fr}
+      .section-header{flex-direction:column; align-items:flex-start}
       .step:not(:last-child)::after{display:none}
       .kpi-strip{grid-template-columns:1fr 1fr}
       .hero-visual{min-height:500px}
@@ -735,6 +736,7 @@
       .framework{grid-template-columns:1fr}
       .phase-overview{grid-template-columns:1fr}
       .timeline-grid{grid-template-columns:1fr}
+      .timeline-line{display:none}
       .kpi-strip{grid-template-columns:1fr 1fr}
       .node{width:calc(50% - 30px); font-size:.92rem; padding:14px 12px}
       .node.branding{left:14px; top:22px}
@@ -743,7 +745,7 @@
       .node.ai{right:20px; top:202px}
       .node.analytics{left:30px; bottom:42px}
       .node.growth{right:30px; bottom:42px}
-      .system-stage{min-height:460px}
+      .system-stage{min-height:500px}
     }
 
     @media (max-width: 560px){
@@ -756,6 +758,11 @@
       .section-header{align-items:start}
       .flow-row{display:grid; grid-template-columns:1fr 1fr}
       .kpi-strip{grid-template-columns:1fr}
+      .hero-meta span{width:100%; text-align:center}
+      .timeline-board{padding:18px}
+      .phase-flow{padding:14px}
+      .phase-pill{width:100%; text-align:center}
+      .phase-arrow{display:none}
       .node{width:calc(50% - 22px); font-size:.82rem}
       .node.branding{left:10px; top:20px}
       .node.website{right:10px; top:40px}
@@ -763,6 +770,7 @@
       .node.ai{right:14px; top:198px}
       .node.analytics{left:14px; bottom:38px}
       .node.growth{right:14px; bottom:38px}
+      .node::after{display:none}
       .node small{font-size:.78rem}
     }
   </style>
