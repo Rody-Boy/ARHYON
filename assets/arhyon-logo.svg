@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" role="img" aria-label="Arhyon logo">
+  <defs>
+    <linearGradient id="gA" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef86ff"/>
+      <stop offset="48%" stop-color="#8e4bdf"/>
+      <stop offset="100%" stop-color="#4627a6"/>
+    </linearGradient>
+    <linearGradient id="gSweep" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8a53ff"/>
+      <stop offset="55%" stop-color="#5f8eff"/>
+      <stop offset="100%" stop-color="#5ef5ff"/>
+    </linearGradient>
+    <linearGradient id="gCore" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3f2aa6"/>
+      <stop offset="100%" stop-color="#5ddfff"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M208 58L301 218L263 236L208 143L152 236L113 254L208 58Z" fill="url(#gA)"/>
+  <path d="M77 268C116 210 181 180 259 174C295 171 325 173 352 180L349 197C322 189 293 188 261 191C188 198 128 226 89 280H41C49 275 58 271 77 268Z" fill="url(#gSweep)"/>
+  <path d="M112 280C136 235 182 203 237 192L278 257C223 270 162 266 112 280Z" fill="url(#gCore)"/>
+  <path d="M208 172C254 159 299 156 339 164L335 178C297 170 255 174 215 186Z" fill="url(#gSweep)"/>
+  <circle cx="352" cy="181" r="14" fill="#6af4ff"/>
+  <circle cx="336" cy="196" r="14" fill="#7ad7ff"/>
+</svg>
